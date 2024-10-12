@@ -1,0 +1,510 @@
+/* ========== DEBUGGER ============ */
+
+
+
+
+header *,
+.blogs *,
+.topic-tags *,
+.objectives *,
+.discover * {
+  /* outline: 1px solid green;
+  background: hsla(80, 80%, 30%, 0.15); */
+}
+
+
+
+
+
+/* ------ TO-TOP ------- */
+
+.to-top {
+  display: none;
+}
+
+
+
+
+
+
+
+/* ========== HEADER ============ */
+
+
+
+header {
+  background: var(--gray50);
+  padding-top: var(--space-b-xl);
+  padding-bottom: var(--space-b-l);
+  position: relative;
+  overflow: hidden;
+
+  container-type: inline-size;
+}
+
+header::before {
+  content: " ";
+  height: 100%;
+  width: 60%;
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+  background-image: var(--color-grad-pri-L);
+}
+
+header::after {
+  content: " ";
+  height: 100%;
+  width: 40%;
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  background-image: var(--color-grad-sec-D);
+}
+
+header .wrapper {
+  --main-min-width: 200px;
+  --sidebar-size: 350px;
+  --gap: var(--space-xl);
+
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: var(--gap);
+
+  z-index: 2;
+}
+
+header .wrapper > * {
+  flex-grow: 1;
+}
+
+header .wrapper > :first-child {
+  margin: auto 0;
+  flex-grow: 300;
+  flex-basis: calc(
+    ((var(--main-min-width) - (100% - var(--sidebar-size) - var(--gap))) * 9999));
+}
+
+header .wrapper > :last-child {
+  flex-basis: var(--sidebar-size);
+  flex-grow: 1;
+}
+
+header .left_side .btn {
+  margin-top: var(--space-xxl);
+}
+
+header .img_wrapper {
+  overflow: hidden;
+  border-radius: 3.75rem 3.75rem 3.75rem 0;
+}
+
+header .img_wrapper img {
+  display: flex;
+}
+
+header .socials {
+  position: absolute;
+  display: flex;
+  gap: 2rem;
+  right: calc(var(--space-b-m));
+  top: 50%;
+}
+
+header .socials a,
+header .socials li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  aspect-ratio: 1;
+}
+
+header .socials svg {
+  fill: var(--bg);
+  transition: var(--transition);
+
+  &:hover {
+    fill: var(--color-pri);
+    box-shadow: 0 .5rem 1rem var(--fg);
+  }
+}
+
+
+
+
+
+
+
+/* ========== Blogs ============ */
+
+
+
+
+
+/* ========== Tags ============ */
+
+
+#topic-tags {
+  padding: var(--space-b-l) 0;
+  background: var(--bg);
+}
+
+.topic-tags h2 {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.topic-tags h2 span {
+  color: var(--color-pri);
+}
+
+.topic-tags .img_wrapper img {
+  max-height: 25px;
+}
+
+.topic-tags .tag-grid {
+  --tag-size: 60px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr );
+  grid-template-rows: 100px, 100px, var(--tag-size);
+  gap: 4px;
+
+  grid-template-areas: 
+    "   tag_1   tag_2   tag_3   tag_3   tag_4   tag_4   "
+    "   tag_5   tag_6   tag_3   tag_3   tag_7   tag_8   "
+    "   tag_9   tag_9   tag_10   tag_10   tag_11   tag_11   "
+  ;
+
+  container-type: inline-size;
+}
+
+.topic-tags .tag:nth-child(1) {
+  grid-area: tag_1;
+}
+
+.topic-tags .tag:nth-child(2) {
+  grid-area: tag_2;
+}
+
+.topic-tags .tag:nth-child(3) {
+  grid-area: tag_3;
+}
+
+.topic-tags .tag:nth-child(4) {
+  grid-area: tag_4;
+}
+
+.topic-tags .tag:nth-child(5) {
+  grid-area: tag_5;
+}
+
+.topic-tags .tag:nth-child(6) {
+  grid-area: tag_6;
+}
+
+.topic-tags .tag:nth-child(7) {
+  grid-area: tag_7;
+}
+
+.topic-tags .tag:nth-child(8) {
+  grid-area: tag_8;
+}
+
+.topic-tags .tag:nth-child(9) {
+  grid-area: tag_9;
+}
+
+.topic-tags .tag:nth-child(10) {
+  grid-area: tag_10;
+}
+
+.topic-tags .tag:nth-child(11) {
+  grid-area: tag_11;
+}
+
+.topic-tags .tag {
+  background: var(--gray90);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  min-width: var(--tag-size);
+  min-height: var(--tag-size);
+  border-radius: var(--space-m);
+  gap: var(--space-s);
+
+  aspect-ratio: 1;
+}
+
+.topic-tags .tag:nth-child(4), 
+.topic-tags .tag:nth-child(9),
+.topic-tags .tag:nth-child(10),
+.topic-tags .tag:nth-child(11) {
+  flex-direction: row;
+  aspect-ratio: 0;
+}
+
+
+
+
+
+
+
+/* ========== OBJECTIVES ============ */
+
+
+.objectives {
+  /* background: var(--gray90); */
+  padding: var(--space-b-l) 0;
+}
+
+.objectives .cards_grid {
+  --min-card-size: 256px;
+  --min-card-height: 300px;
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(var(--min-card-size, 25ch), 100%), 1fr));
+  gap: 1px;
+}
+
+.objectives .card {
+  min-height: var(--min-card-height);
+  padding: var(--space-xxl);
+  outline: 1px solid var(--fg);
+  display: flex;
+  flex-direction: column;
+}
+
+.objectives .dash {
+  background: var(--color-pri);
+  width: var(--space-xxl);
+  height: var(--space-xxs);
+  border-radius: var(--space-xs);
+}
+
+.objectives h3 {
+  font-size: 1.6rem;
+  margin: var(--space-xl) 0;
+}
+
+.objectives .card p {
+  margin-bottom: var(--space-m);
+}
+.objectives .arrow {
+  margin-top: auto;
+  display: flex;
+  justify-content: right;
+}
+
+.objectives svg {
+  fill: var(--fg);
+  transform: rotate(-45deg);
+}
+
+.objectives .card:first-child {
+  position: relative;
+  padding: 0;
+  outline: none;
+}
+
+.objectives .title_card {
+  position: absolute;
+  left: 0;
+}
+
+.objectives small {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--gray30);
+}
+
+.objectives span {
+  color: var(--color-pri);
+}
+
+.objectives .btn {
+  margin-top: var(--space-xxl);
+}
+
+
+
+
+
+
+
+/* ========== DISCOVER ============ */
+
+
+#discover {
+  padding: var(--space-b-m) 0;
+  background-image: var(--color-grad-sec-D);
+}
+
+.discover .cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxl);
+}
+
+.discover h2 {
+  color: var(--color-white);
+  font-size: 3rem;
+  max-width: 558px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.discover .btn {
+  margin-inline: auto;
+}
+
+.discover hr {
+  margin: var(--space-xxl) 0;
+  height: 1px;
+  background: var(--gray30);
+}
+
+
+
+
+
+/* ========= Dark mode settings =========== */
+
+
+
+@media (prefers-color-scheme: dark) {
+  header::before {
+    background-image: var(--color-grad-pri-D);
+  }
+
+  header .socials svg {
+    fill: var(--fg);
+  }
+
+  .objectives {
+    background: var(--gray10);
+  }
+
+  #topic-tags {
+    background-color: hsl(0, 0%, 25%);
+  }
+
+  .topic-tags .tag {
+    background: hsl(0, 0%, 15%);
+  }
+
+  .objectives .card {
+    outline-color: var(--gray30);
+  }
+
+  .objectives small {
+    color: var(--gray70);
+  }
+}
+
+
+
+
+
+
+/* ============= CONTAINER QUERIES =========== */
+
+@media screen and (max-width: 545px) {
+  #topic-tags .tag-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, var(--tag-size) * 2 + 4px);
+
+    grid-template-areas: 
+      "   tag_1   tag_2   tag_3   tag_3   "
+      "   tag_4   tag_4   tag_3   tag_3   "
+      "   tag_5   tag_6   tag_6   tag_7   "
+      "   tag_8   tag_9   tag_10   tag_11   "
+    ;
+  }
+
+  .topic-tags .wrapper .tag {
+    flex-direction: column;
+    aspect-ratio: 0;
+  }
+
+  .topic-tags .tag:nth-child(4), 
+  .topic-tags .tag:nth-child(6) {
+    flex-direction: row;
+  }
+
+  .objectives .card:first-child {
+    min-height: 230px;
+  }
+
+  .objectives .title_card {
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: 375px) {
+  #topic-tags .tag-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, var(--tag-size) * 2 + 4px);
+
+    grid-template-areas: 
+      "   tag_1   tag_2   tag_4   "
+      "   tag_3   tag_3   tag_3   "
+      "   tag_5   tag_6   tag_7   "
+      "   tag_8   tag_8   tag_9   "
+      "   tag_10   tag_11   tag_11   "
+    ;
+  }
+
+  .topic-tags .tag:nth-child(3), 
+  .topic-tags .tag:nth-child(8),
+  .topic-tags .tag:nth-child(11) {
+    flex-direction: row;
+  }
+  
+  .topic-tags .tag:nth-child(3) {
+    min-height: calc(var(--tag-size) * 1.5);
+  }
+
+  .topic-tags .tag:nth-child(4),
+  .topic-tags .tag:nth-child(6) {
+    flex-direction: column;
+  }
+
+  .objectives .card {
+    --min-card-height: 200px;
+    padding: var(--space-l);
+  }
+
+  .objectives .card p {
+    margin-bottom: var(--space-xs);
+  }
+}
+
+@container (max-width: 600px) {
+
+
+  header::before {
+    height: 50%;
+    width: 100%;
+    right: 0;
+  }
+
+  header::after {
+    height: 50%;
+    width: 100%;
+    left: 0;
+  }
+
+  header .wrapper {
+    /* --sidebar-size: 400px; */
+  }
+
+  header .socials {
+    display: none;
+  }
+}

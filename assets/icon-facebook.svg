@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="none" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="path_1" d="M16 0L16 0L16 16L0 16L0 0L16 0Z" />
+    <rect id="rect_2" x="0" y="0" width="16" height="16" />
+    <clipPath id="clip_path_3">
+      <use xlink:href="#rect_2" />
+    </clipPath>
+  </defs>
+  <g id="facebook" opacity="1" clip-path="url(#clip_path_3)">
+    <g>
+      <use xlink:href="#path_1" style="mix-blend-mode:normal;" />
+      <g>
+        <g id="Group" transform="translate(0 -0)">
+          <path id="facebook" d="M16 8.02934C16 3.59475 12.4184 0 8 0C3.58161 0 0 3.59475 0 8.02934C0 11.7951 2.58295 14.9545 6.06743 15.8224C6.06743 15.8224 6.06743 10.4829 6.06743 10.4829L4.41776 10.4829L4.41776 8.02934L6.06743 8.02934C6.06743 8.02934 6.06743 6.97212 6.06743 6.97212C6.06743 4.23899 7.29965 2.97228 9.97281 2.97228C10.4798 2.97228 11.3543 3.07229 11.7121 3.17198C11.7121 3.17198 11.7121 5.39622 11.7121 5.39622C11.5231 5.37635 11.1953 5.36625 10.7879 5.36625C9.47615 5.36625 8.96912 5.86505 8.96912 7.16173C8.96912 7.16173 8.96912 8.02934 8.96912 8.02934L11.5822 8.02934L11.1334 10.4829L8.96912 10.4829C8.96912 10.4829 8.96912 16 8.96912 16C12.9305 15.5198 16 12.1346 16 8.02934C16 8.02934 16 8.02934 16 8.02934Z" style="fill:#757575;fill-rule:evenodd;mix-blend-mode:normal;" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
