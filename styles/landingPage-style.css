@@ -99,10 +99,13 @@ header .left_side .btn {
 header .img_wrapper {
   overflow: hidden;
   border-radius: 3.75rem 3.75rem 3.75rem 0;
+  width: 100%;
+  aspect-ratio: 1;
 }
 
 header .img_wrapper img {
   display: flex;
+  height: 100%;
 }
 
 header .socials {
@@ -260,6 +263,7 @@ header .socials svg {
 .objectives {
   /* background: var(--gray90); */
   padding: var(--space-b-l) 0;
+  background: var(--gray90);
 }
 
 .objectives .cards_grid {

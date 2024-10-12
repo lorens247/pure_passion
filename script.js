@@ -24,7 +24,7 @@ nav.innerHTML = `
   <div class="nav">
     <div class="wrapper">
       <div class="logo">
-        <a href="../../">
+        <a href="">
           <span>Pure</span>
           <span>Passion</span>
         </a>
@@ -83,7 +83,7 @@ const footer = document.querySelector("footer");
 footer.innerHTML = `
 <div class="nav">
 <div class="logo">
-  <a href="../../">
+  <a href="">
     <span>Pure</span>
     <span>Passion</span>
   </a>

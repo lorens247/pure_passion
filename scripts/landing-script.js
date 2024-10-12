@@ -4,7 +4,6 @@ const homeLink = document.querySelectorAll(".logo a");
 homeLink.forEach((link) => {
   link.href = "./";
 });
-// homeLink.href = "./";
 
 
 // Global favicon

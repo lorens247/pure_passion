@@ -55,3 +55,11 @@ const faviconManifest = document.createElement("link");
 faviconManifest.setAttribute("rel", "manifest");
 faviconManifest.setAttribute("href", "../../site.webmanifest");
 document.head.appendChild(faviconManifest);
+
+
+// Change home nav link on landing page
+const homeLink = document.querySelectorAll(".logo a");
+
+homeLink.forEach((link) => {
+  link.href = "../../";
+});
