@@ -65,7 +65,6 @@ if (topBtn !== null) {
 }
 
 function displayTopBtn() {
-  console.log("check");
   if (window.scrollY > 800) {
     topBtn.style.display = "flex";
   } else {
