@@ -83,7 +83,7 @@ const footer = document.querySelector("footer");
 footer.innerHTML = `
 <div class="nav">
 <div class="logo">
-  <a href="/index.html">
+  <a href="../../">
     <span>Pure</span>
     <span>Passion</span>
   </a>
