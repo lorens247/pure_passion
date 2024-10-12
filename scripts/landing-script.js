@@ -1,4 +1,6 @@
-
+// Change home nav link on landing page
+const homeLink = document.querySelector(".logo a");
+homeLink.href = "./";
 
 
 // Global favicon
