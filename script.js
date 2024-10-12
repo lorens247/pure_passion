@@ -24,7 +24,7 @@ nav.innerHTML = `
   <div class="nav">
     <div class="wrapper">
       <div class="logo">
-        <a href="../../index.html">
+        <a href="../../">
           <span>Pure</span>
           <span>Passion</span>
         </a>

@@ -126,7 +126,7 @@ h1 span {
 
 .blog-pager-newer-link::before, 
 .blog-pager-older-link::after {
-  content: url("../../assets/next-blog-arrow.svg");
+  content: url("../assets/next-blog-arrow.svg");
   float: left;
   margin: 0 var(--space-s) 0 0;
 }
