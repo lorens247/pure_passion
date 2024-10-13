@@ -46,6 +46,9 @@ input {
   /* accent color */
   --color-accent: hsl(213, 82%, 45%);
 
+  /* Box-shadow */
+  --shadow: 0 10px 10px hsla(0, 0%, 0%, 0.1);
+
   /* MASTER color controls */
   --bg: var(--color-white);
   --fg: var(--color-black);
@@ -272,7 +275,7 @@ nav {
   left: 0;
   --gray90:  hsl(0, 0%, 90%, 92%);
   background: var(--gray90);
-  box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.1);
+  box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
 
   z-index: 3;
@@ -309,6 +312,10 @@ nav ul {
   align-items: center;
 }
 
+nav .nav__items {
+  position: relative;
+}
+
 footer .logo,
 nav .logo {
   overflow: hidden;
@@ -339,6 +346,37 @@ nav ul li a {
   color: var(--gray10);
   padding: var(--space-m);
 }
+
+
+/* ======== HAMBURGER ========= */
+.hamburger {
+  aspect-ratio: 1;
+  height: calc(var(--space-xxl) + .5rem);
+  border-radius: 50%;
+  background: var(--gray70);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  display: none;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  transition: var(--transition);
+  background: var(--color-pri);
+}
+
+
+
+
+
+/* ======== TO-TOP ========== */
 
 .to-top {
   position: fixed;
@@ -657,9 +695,41 @@ footer .copyright {
 }
 
 @container (max-width: 600px) {
-
-
+  .hamburger {
+    display: flex;
+  }
+  
   nav ul {
     display: none;
+  }
+
+  .hamburger.active {
+    background: none;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:first-child {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:last-child {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .hamburger.active + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(var(--space-b-m) + 3px);
+    right: calc(var(--space-m) * -1);
+    gap: var(--space-xl);
+    padding: var(--space-m);
+    background: var(--gray90);
+    /* justify-content: right; */
+    align-items: start;
+    box-shadow: var(--shadow);
   }
 }

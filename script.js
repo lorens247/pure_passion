@@ -30,6 +30,11 @@ nav.innerHTML = `
         </a>
       </div>
       <div class="nav__items">
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
         <ul>
           <li><a href="#">Blogs</a></li>
           <li><a href="#">Events</a></li>
@@ -40,6 +45,12 @@ nav.innerHTML = `
     </div>
   </div>
 `;
+
+const hamburger = document.querySelector("nav .hamburger");
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+})
+console.log(hamburger)
 
 
 
