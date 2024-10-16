@@ -1,0 +1,168 @@
+/* ============ DEBUGGER ============ */
+section * {
+  /* outline: 1px solid green;
+  background: hsla(80, 80%, 30%, 0.1); */
+}
+
+
+
+
+
+
+/* ========== CONTACT ============ */
+
+.contact h1 {
+  margin-inline: 0;
+}
+
+
+section.contact {
+  padding: var(--space-b-l) 0;
+  min-height: 87dvh;
+  display: grid;
+  grid-template-columns: var(--master-layout);
+  align-items: top;
+  justify-content: center;
+}
+
+.contact .wrapper {
+  display: grid;
+  grid-template-columns: 
+    repeat(auto-fit, minmax(min(var(--min-card-size, 30ch), 100%), 1fr));
+  gap: var(--space-l) var(--space-b-m);
+  margin: auto 0;
+}
+
+.contact__basics,
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+.contact__basics {
+  padding-right: var(--space-xxl);
+}
+
+.contact__desktop,
+.contact__mobile {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-l);
+}
+
+.contact__mobile {
+  display: none;
+}
+
+.contact__phone-numbers a,
+.contact__phone-numbers .contact__phone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 700;
+  color: var(--fg)
+}
+
+.contact__socials svg,
+.contact__phone-numbers svg {
+  fill: var(--color-pri)
+}
+
+.contact__socials ul {
+  display: flex;
+  gap: var(--space-m);
+}
+
+.contact__whatsapp-chat {
+  display: none;
+  padding: var(--space-xxl) 0;
+}
+
+
+
+
+
+
+/* ========== FORM ============ */
+
+
+.contact__form {
+  padding-top: var(--space-l);
+}
+
+h3 {
+  padding-bottom: var(--space-m);
+  color: var(--gray50);
+}
+
+input,
+textarea {
+  all: unset;
+  padding: var(--space-s);
+  border: 1px solid var(--gray50);
+  transition: var(--transition);
+}
+
+textarea {
+  min-height: var(--space-b-xxl);
+}
+
+input:last-child {
+  margin-left: auto;
+  padding: var(--space-l) var(--space-xl);
+  border-radius: var(--space-b-l);
+  margin-top: var(--space-xxl);
+}
+
+
+
+
+
+
+/* ============= CONTAINER QUERIES =========== */
+
+@media screen and (max-width: 545px) {
+  .contact__mobile {
+    display: flex;
+  }
+
+  .contact__desktop {
+    display: none;
+  }
+
+  .contact__mobile a {
+    margin-inline: auto;
+  }
+
+  h1,
+  .contact .socials {
+    margin-inline: auto;
+  }
+
+  .contact__basics {
+    align-items: center;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .contact__whatsapp-chat {
+    display: flex;
+    padding: var(--space-m) var(--space-l);
+  }
+
+  .contact__whatsapp-chat svg {
+    margin-inline: auto;
+    fill: #25D366;
+  }
+
+  .contact__whatsapp-chat:hover svg{
+    fill: #179244;
+  }
+
+  input:last-child {
+    margin-left: 0;
+    margin-inline: auto;
+  }
+}

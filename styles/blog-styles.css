@@ -52,6 +52,7 @@ h1 span {
   border-radius: var(--space-xl) var(--space-xl) var(--space-xl) 0;
   overflow: hidden;
   margin-bottom: var(--space-xxl);
+  aspect-ratio: 16 / 9;
 }
 
 .entry p {

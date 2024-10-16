@@ -60,7 +60,7 @@ input {
   font-size: 12px;
 
   /* Fonts - landing page */
-  --ff: "Montserrat", sans-serif;
+  --ff: "Inter", sans-serif;
   --h1: bold 4rem/1em var(--ff);
   --h2: bold 3rem/1.2em var(--ff);
   --h3: bold 2.25rem/1.2em var(--ff);
@@ -96,6 +96,11 @@ input {
   --space-b-l: 6.25rem;
   --space-b-xl: 10rem;
   --space-b-xxl: 15rem;
+
+  --master-layout: 
+    minmax(1rem, 1fr)
+    min(100% - 2rem, 800px)
+    minmax(1rem, 1fr);
 }
 
 /* ========== GENERAL TEXT STYLING ============ */
@@ -158,10 +163,7 @@ body {
 /* --------- MASTER LAYOUT SETUP ---------- */
 section, header, footer {
   display: grid;
-  grid-template-columns:
-    minmax(1rem, 1fr)
-    min(100% - 2rem, 800px)
-    minmax(1rem, 1fr);
+  grid-template-columns: var(--master-layout)
 }
 
 section > *, header > *, footer > * {
@@ -256,10 +258,10 @@ h1 {
 
 
 /* ============ DEBUGGER ============ */
-* {
-  /* outline: 1px solid green;
-  background: hsla(80, 80%, 30%, 0.1); */
-}
+/* * {
+  outline: 1px solid green;
+  background: hsla(80, 80%, 30%, 0.1);
+} */
 
 
 
@@ -387,6 +389,7 @@ nav ul li a {
   transform: rotate(90deg);
   border-radius: 50%;
   z-index: 99;
+  display: none;
   overflow: hidden;
 }
 
@@ -583,13 +586,13 @@ footer .subtitle {
   padding: 0 var(--space-xs);
 }
 
-footer .socials a {
+.socials a {
   display: flex;
   align-items: center;
   padding: var(--space-xs);
 }
 
-footer .socials a:hover svg {
+.socials a:hover svg {
   fill: var(--color-pri)
 }
 
@@ -683,7 +686,6 @@ footer .copyright {
   footer .subtitle {
     text-align: center;
   }
-
 }
 
 
@@ -731,5 +733,10 @@ footer .copyright {
     /* justify-content: right; */
     align-items: start;
     box-shadow: var(--shadow);
+  }
+
+  .hamburger.active + ul li {
+    text-wrap: nowrap;
+    padding-right: var(--space-xl);
   }
 }

@@ -13,7 +13,7 @@ document.head.appendChild(gstatic);
 
 const gFont = document.createElement('link');
 gFont.setAttribute("rel", "stylesheet");
-gFont.setAttribute("href", "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+gFont.setAttribute("href", "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 document.head.appendChild(gFont);
 
 
@@ -39,7 +39,7 @@ nav.innerHTML = `
           <li><a href="#">Blogs</a></li>
           <li><a href="#">Events</a></li>
           <li><a href="#">About Us</a></li>
-          <li><a href="#" class="btn ter">Contact</a></li>
+          <li><a href="./contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
