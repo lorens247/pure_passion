@@ -140,6 +140,14 @@
   <footer></footer>
 
   <script src="./script.js"></script>
+  <script>
+    // Change home nav link on landing page
+    const homeLink = document.querySelectorAll(".logo a");
+
+    homeLink.forEach((link) => {
+    link.href = "./";
+    });
+  </script>
 
 
 </body>

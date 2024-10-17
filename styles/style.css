@@ -349,6 +349,10 @@ nav ul li a {
   padding: var(--space-m);
 }
 
+nav ul li a:hover {
+  color: var(--color-pri);
+}
+
 
 /* ======== HAMBURGER ========= */
 .hamburger {
@@ -514,22 +518,6 @@ nav ul li a {
   padding-top: var(--space-m);
 
   display: none;
-}
-
-.blogs svg {
-  fill: var(--fg);
-  transition: var(--transition);
-}
-
-.blogs .arrow.left,
-.blogs .arrow.right {
-  display: flex;
-}
-
-.blogs .arrow.left:hover svg,
-.blogs .arrow.right:hover svg {
-  opacity: .7;
-  fill: var(--color-pri-D);
 }
 
 .blogs ::-webkit-scrollbar {
