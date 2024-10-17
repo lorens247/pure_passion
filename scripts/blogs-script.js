@@ -30,36 +30,41 @@ function hide_Audio_Controls() {
 
 
 
-// Global favicon
-const faviconApple = document.createElement("link");
-faviconApple.setAttribute("rel", "apple-touch-icon");
-faviconApple.setAttribute("sizes", "180x180");
-faviconApple.setAttribute("href", "../../apple-touch-icon.png");
-document.head.appendChild(faviconApple);
+// Blog favicon href correction
+const favicons = document.querySelectorAll("link");
 
-const faviconIcon = document.createElement("link");
-faviconIcon.setAttribute("rel", "icon");
-faviconIcon.setAttribute("type", "image/png");
-faviconIcon.setAttribute("sizes", "32x32");
-faviconIcon.setAttribute("href", "../../favicon-32x32.png");
-document.head.appendChild(faviconIcon);
+favicons.forEach((favicon) => {
+  if (favicon.rel === "apple-touch-icon") {
+    favicon.setAttribute("href", "../../apple-touch-icon.png");
+  } 
+  
+  if (favicon.rel === "manifest") {
+    favicon.setAttribute("href", "../../site.webmanifest");
+  }
 
-const faviconIcon16 = document.createElement("link");
-faviconIcon16.setAttribute("rel", "icon");
-faviconIcon16.setAttribute("type", "image/png");
-faviconIcon16.setAttribute("sizes", "16x16");
-faviconIcon16.setAttribute("href", "../../favicon-16x16.png");
-document.head.appendChild(faviconIcon16);
-
-const faviconManifest = document.createElement("link");
-faviconManifest.setAttribute("rel", "manifest");
-faviconManifest.setAttribute("href", "../../site.webmanifest");
-document.head.appendChild(faviconManifest);
+  if (favicon.type === "image/png") {
+    favicon.setAttribute("href", "../../favicon-32x32.png");
+  }
+})
 
 
-// Change home nav link on landing page
+
+
+// home nav href correction
 const homeLink = document.querySelectorAll(".logo a");
 
-homeLink.forEach((link) => {
-  link.href = "../../";
-});
+if (homeLink !== null) {
+  homeLink.forEach((link) => {
+    link.href = "../../";
+  });
+}
+
+// contact link correction
+const contactLinks = document.querySelectorAll(".nav__items li:last-child a");
+console.log(contactLinks);
+
+if (contactLinks !== null) {
+  contactLinks.forEach((link) => {
+    link.setAttribute("href", "../../contact.html");
+  })
+}

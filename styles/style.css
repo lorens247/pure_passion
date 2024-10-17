@@ -258,10 +258,10 @@ h1 {
 
 
 /* ============ DEBUGGER ============ */
-/* * {
-  outline: 1px solid green;
-  background: hsla(80, 80%, 30%, 0.1);
-} */
+* {
+  /* outline: 1px solid green;
+  background: hsla(80, 80%, 30%, 0.1); */
+}
 
 
 
@@ -446,7 +446,6 @@ nav ul li a:hover {
   --card-max-width: 244px;
   --gap: var(--space-xl);
   padding: var(--space-l);
-  min-height: 250px;
   display: flex;
   gap: var(--gap);
   width: calc((var(--card-max-width) + var(--gap)) * var(--card-count));
@@ -455,26 +454,27 @@ nav ul li a:hover {
 .blogs .card {
   width: var(--card-max-width);
   background: transparent;
-
-  display: grid;
-  gap: var(--space-xs);
-
-  transition: var(--transition);
-  cursor: pointer;
+  transition: transform .4s;
 }
 
 .blogs .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
 .blogs .img__wrapper {
   border-radius: var(--space-s);
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   position: relative;
 }
 
-.blogs .img__wrapper img {
-  transition: var(--transition);
+.blogs img {
+  filter: grayscale(60%);
+  transition: filter 2;
+}
+
+.blogs .card:hover img {
+  filter: grayscale(0)
 }
 
 .blogs .read-time {
@@ -491,12 +491,20 @@ nav ul li a:hover {
 .blogs h3 {
   font-size: 1.15rem;
   text-wrap: wrap;
+  padding: var(--space-s) 0;
 }
 
 .blogs .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px var(--space-s);
+  gap: 4px var(--space-xs);
+  transition: opacity .4s height .4s;
+}
+
+.blogs .card:hover .tags {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
 }
 
 .blogs .tag {
@@ -510,14 +518,19 @@ nav ul li a:hover {
   color: var(--bg);
 }
 
-.blogs .controls {
-  position: relative;
-  display: flex;
-  gap: var(--space-l);
-  justify-content: center;
-  padding-top: var(--space-m);
+.blogs a {
+  opacity: 0;
+  visibility: hidden;
+  width: fit-content;
+  margin-left: auto;
+  padding: var(--space-xxs) var(--space-xl);
+  cursor: pointer;
+  transition: opacity .4s;
+}
 
-  display: none;
+.blogs .card:hover a {
+  opacity: 1;
+  visibility: visible;
 }
 
 .blogs ::-webkit-scrollbar {

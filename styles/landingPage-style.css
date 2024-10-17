@@ -1,6 +1,4 @@
-/* ========== DEBUGGER ============ */
-
-
+/* ========== DEBUGGING ============ */
 
 
 header *,
@@ -134,14 +132,6 @@ header .socials svg {
     box-shadow: 0 .5rem 1rem var(--fg);
   }
 }
-
-
-
-
-
-
-
-/* ========== Blogs ============ */
 
 
 
@@ -345,7 +335,8 @@ header .socials svg {
 
 #discover {
   padding: var(--space-b-m) 0;
-  background-image: var(--color-grad-sec-D);
+  /* background-image: var(--color-grad-sec-D); */
+  background: var(--color-);
 }
 
 .discover .cta {
