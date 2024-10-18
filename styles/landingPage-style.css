@@ -323,6 +323,7 @@ header .socials svg {
 
 .objectives span {
   color: var(--color-pri);
+  display: block;
 }
 
 .objectives .arrow {
