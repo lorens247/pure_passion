@@ -36,9 +36,9 @@ nav.innerHTML = `
           <span class="bar"></span>
         </div>
         <ul>
-          <li><a href="#">Blogs</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">About Us</a></li>
+          <li><a href="./blogs.html">Blogs</a></li>
+          <li><a href="./events.html">Events</a></li>
+          <li><a href="./about-us.html">About Us</a></li>
           <li><a href="./contact.html">Contact</a></li>
         </ul>
       </div>

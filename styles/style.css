@@ -741,3 +741,15 @@ footer .copyright {
     padding-right: var(--space-xl);
   }
 }
+
+
+.coming-soon {
+  min-height: 86dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

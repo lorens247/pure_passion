@@ -61,10 +61,33 @@ if (homeLink !== null) {
 
 // contact link correction
 const contactLinks = document.querySelectorAll(".nav__items li:last-child a");
-console.log(contactLinks);
 
 if (contactLinks !== null) {
   contactLinks.forEach((link) => {
     link.setAttribute("href", "../../contact.html");
+  })
+}
+
+const blogsLinks = document.querySelectorAll(".nav__items li:first-child a");
+
+if (blogsLinks !== null) {
+  blogsLinks.forEach((link) => {
+    link.setAttribute("href", "../../blogs.html");
+  })
+}
+
+const eventsLinks = document.querySelectorAll(".nav__items li:nth-child(2) a");
+
+if (eventsLinks !== null) {
+  eventsLinks.forEach((link) => {
+    link.setAttribute("href", "../../events.html")
+  })
+}
+
+const aboutsLinks = document.querySelectorAll(".nav__items li:nth-child(3) a");
+
+if (aboutsLinks !== null) {
+  aboutsLinks.forEach((link) => {
+    link.setAttribute("href", "../../about-us.html")
   })
 }
