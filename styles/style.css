@@ -1,6 +1,5 @@
-/* ============ DEFAULT SETUP ============ */
+/* ============ CLEAR DEFAULT ============ */
 
-/* Clear Defaults */
 * {
   margin: 0;
   padding: 0;
@@ -11,13 +10,12 @@
   box-sizing: border-box;
 }
 
-/* input responsiveness */
-input {
-  min-width: 0;
-}
+
+
+/* =========== ROOT COLORS =========== */
+
 
 :root {
-  /* =========== ROOT COLORS =========== */
 
   /* white and black colors */
   --color-white: #fff;
@@ -48,14 +46,20 @@ input {
 
   /* Box-shadow */
   --shadow: 0 10px 10px hsla(0, 0%, 0%, 0.1);
-
+  
   /* MASTER color controls */
   --bg: var(--color-white);
   --fg: var(--color-black);
+}
 
 
 
-  /* =========== ROOT FONTS =========== */
+
+/* =========== ROOT FONTS =========== */
+
+
+
+:root {
 
   font-size: 12px;
 
@@ -79,10 +83,14 @@ input {
   --smallui: .75rem/1.8em var(--ff);
   
   --transition: all 300ms ease;
+}
 
 
 
-  /* =========== ROOT SPACING =========== */
+/* =========== ROOT SPACING =========== */
+
+
+:root {
 
   --space-xxs: .25rem;
   --space-xs: .5rem;
@@ -102,6 +110,8 @@ input {
     min(100% - 2rem, 800px)
     minmax(1rem, 1fr);
 }
+
+
 
 /* ========== GENERAL TEXT STYLING ============ */
 
@@ -129,24 +139,9 @@ a, .btn {
   font-size: 1.1rem;
 }
 
-
-
-
-/* ========== BASIC BODY STYLING ============ */
-
-/* -------- Scroll Styling -------- */
-
-::-webkit-scrollbar {
-  width: 10px;
-  background: var(--color-pri-L);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-pri-D);
-}
-
-html {
-  scroll-behavior: smooth;
+/* input responsiveness */
+input {
+  min-width: 0;
 }
 
 
@@ -177,6 +172,27 @@ section > *, header > *, footer > * {
 
 
 
+/* ========== BASIC BODY STYLING ============ */
+
+/* -------- Scroll Styling -------- */
+
+::-webkit-scrollbar {
+  /* --bg: var(--color-pri-L); */
+  width: 10px;
+  background: var(--color-pri-L);
+}
+
+::-webkit-scrollbar-thumb {
+  /* --bg: var(--color-pri-D); */
+  background: var(--color-pri-D);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
 
 /* ========== BASIC ELEMENT STYLING ============ */
 
@@ -191,7 +207,7 @@ img {
 /* -------- button styling -------- */
 
 .btn {
-  background: hotpink;
+  /* background: var(--color-black); */
   color: var(--color-white);
   border-radius: 2rem;
   padding: var(--space-xs) var(--space-xl);
@@ -270,6 +286,8 @@ h1 {
 
 /* ========== NAVBAR ============ */
 
+
+
 nav {
   position: fixed;
   top: 0;
@@ -279,10 +297,22 @@ nav {
   background: var(--gray90);
   box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
-
   z-index: 3;
 
   container-type: inline-size;
+}
+
+nav #mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+nav svg {
+  fill: var(--color-pri);
+  width: var(--space-xl);
+  margin-right: var(--space-xxl);
 }
 
 nav .nav {
@@ -354,7 +384,13 @@ nav ul li a:hover {
 }
 
 
+
+
+
 /* ======== HAMBURGER ========= */
+
+
+
 .hamburger {
   aspect-ratio: 1;
   height: calc(var(--space-xxl) + .5rem);
@@ -392,7 +428,7 @@ nav ul li a:hover {
   aspect-ratio: 1;
   transform: rotate(90deg);
   border-radius: 50%;
-  z-index: 99;
+  z-index: 3;
   display: none;
   overflow: hidden;
 }
@@ -622,43 +658,6 @@ footer .copyright {
 
 
 
-/* ========= Dark mode settings =========== */
-
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* MASTER color controls */
-    --bg: var(--color-black);
-    --fg: var(--color-white);
-  }
-
-  ::-webkit-scrollbar {
-    background: var(--gray30);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-pri);
-  }
-
-  #blogs {
-    background: var(--gray10);
-  }
-
-  .blogs .tag {
-    background: var(--gray30);
-    color: var(--fg);
-    opacity: 1;
-  }
-
-  footer {
-    background-image: var(--color-grad-pri-D);
-  }
-}
-
-
-
-
-
 
 /* ============= CONTAINER QUERIES =========== */
 
@@ -740,6 +739,15 @@ footer .copyright {
     text-wrap: nowrap;
     padding-right: var(--space-xl);
   }
+
+  nav {
+    position: relative;
+  }
+
+  nav #mode {
+    position: absolute;
+    right: var(--space-b-m);
+  }
 }
 
 
@@ -752,4 +760,103 @@ footer .copyright {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+
+
+
+/* =========== LIGHT/DARK/SYSTEM =========== */
+/* =============  MODE CONTROL ============= */
+
+
+
+/* Light mode default */
+html.light-mode {
+    --bg: var(--color-white);
+    --fg: var(--color-black);
+}
+
+html.light-mode ::-webkit-scrollbar {
+  background: transparent;
+}
+
+html.light-mode ::-webkit-scrollbar-thumb {
+  background: var(--color-pri-D);
+}
+
+html.light-mode #blogs {
+  background: var(--color-pri-L);
+}
+
+html.light-mode .blogs .tag {
+  background: var(--color-pri-D);
+  color: var(--bg);
+  opacity: .4;
+}
+
+html.light-mode footer {
+  background: var(--gray70);
+}
+
+/* Dark mode default */
+html.dark-mode {
+    --bg: var(--color-black);
+    --fg: var(--color-white);
+}
+
+html.dark-mode ::-webkit-scrollbar {
+  background: var(--gray30);
+}
+
+html.dark-mode ::-webkit-scrollbar-thumb {
+  background: var(--color-pri);
+}
+
+html.dark-mode #blogs {
+  background: var(--gray10);
+}
+
+html.dark-mode .blogs .tag {
+  background: var(--gray30);
+  color: var(--fg);
+  opacity: 1;
+}
+
+html.dark-mode footer {
+  background-image: var(--color-grad-pri-D);
+}
+
+
+
+/* ========= Dark mode settings =========== */
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* MASTER color controls */
+    --bg: var(--color-black);
+    --fg: var(--color-white);
+  }
+
+  ::-webkit-scrollbar {
+    background: var(--gray30);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-pri);
+  }
+
+  #blogs {
+    background: var(--gray10);
+  }
+
+  .blogs .tag {
+    background: var(--gray30);
+    color: var(--fg);
+    opacity: 1;
+  }
+
+  footer {
+    background-image: var(--color-grad-pri-D);
+  }
 }

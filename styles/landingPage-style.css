@@ -17,7 +17,7 @@ header *,
 /* ------ TO-TOP ------- */
 
 .to-top {
-  display: none;
+  /* display: none; */
 }
 
 
@@ -31,7 +31,6 @@ header *,
 
 
 header {
-  background: var(--gray50);
   padding-top: var(--space-b-xl);
   padding-bottom: var(--space-b-l);
   position: relative;
@@ -48,7 +47,11 @@ header::before {
 
   bottom: 0;
   left: 0;
-  background-image: var(--color-grad-pri-L);
+  background: var(--color-grad-pri-L);
+}
+
+html.darkmode header::before {
+
 }
 
 header::after {
@@ -59,7 +62,7 @@ header::after {
 
   top: 0;
   right: 0;
-  background-image: var(--color-grad-sec-D);
+  background: var(--color-grad-sec-D);
 }
 
 header .wrapper {
@@ -246,7 +249,7 @@ header .socials svg {
   box-shadow: var(--shadow);
   background: var(--color-grad-pri-D);
   color: var(--color-white);
-  z-index: 3;
+  z-index: 2;
 }
 
 .topic-tags .tag:nth-child(4), 
@@ -395,6 +398,66 @@ header .socials svg {
 /* ========= Dark mode settings =========== */
 
 
+/* Light mode */
+
+html.light-mode header::before {
+  background-image: var(--color-grad-pri-L);
+}
+
+html.light-mode header .socials svg {
+  fill: var(--bg);
+}
+
+html.light-mode .objectives {
+  background: var(--gray90);
+}
+
+html.light-mode #topic-tags {
+  background: var(--bg);
+}
+
+html.light-mode .topic-tags .tag {
+  background: var(--gray90);
+}
+
+html.light-mode .objectives .card {
+  outline-color: var(--fg);
+}
+
+html.light-mode .objectives small {
+  color: var(--gray30);
+}
+
+
+/* Dark mode */
+
+html.darkmode header::before {
+  background-image: var(--color-grad-pri-D);
+}
+
+html.darkmode header .socials svg {
+  fill: var(--fg);
+}
+
+html.darkmode .objectives {
+  background: var(--gray10);
+}
+
+html.darkmode #topic-tags {
+  background-color: hsl(0, 0%, 25%);
+}
+
+html.darkmode .topic-tags .tag {
+  background: hsl(0, 0%, 15%);
+}
+
+html.darkmode .objectives .card {
+  outline-color: var(--gray30);
+}
+
+html.darkmode .objectives small {
+  color: var(--gray70);
+}
 
 @media (prefers-color-scheme: dark) {
   header::before {
