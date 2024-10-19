@@ -435,31 +435,31 @@ html.light-mode .objectives small {
 
 /* Dark mode */
 
-html.darkmode header::before {
+html.dark-mode header::before {
   background-image: var(--color-grad-pri-D);
 }
 
-html.darkmode header .socials svg {
+html.dark-mode header .socials svg {
   fill: var(--fg);
 }
 
-html.darkmode .objectives {
+html.dark-mode .objectives {
   background: var(--gray10);
 }
 
-html.darkmode #topic-tags {
+html.dark-mode #topic-tags {
   background-color: hsl(0, 0%, 25%);
 }
 
-html.darkmode .topic-tags .tag {
+html.dark-mode .topic-tags .tag {
   background: hsl(0, 0%, 15%);
 }
 
-html.darkmode .objectives .card {
+html.dark-mode .objectives .card {
   outline-color: var(--gray30);
 }
 
-html.darkmode .objectives small {
+html.dark-mode .objectives small {
   color: var(--gray70);
 }
 
