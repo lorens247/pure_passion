@@ -420,6 +420,10 @@ html.light-mode .topic-tags .tag {
   background: var(--gray90);
 }
 
+html.light-mode .topic-tags .tag:hover {
+  background: var(--color-grad-pri-D);
+}
+
 html.light-mode .objectives .card {
   outline-color: var(--fg);
 }
