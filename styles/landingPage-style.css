@@ -192,6 +192,7 @@ header .socials svg {
 
 .topic-tags .tag:nth-child(3) {
   grid-area: tag_3;
+  text-align: center;
 }
 
 .topic-tags .tag:nth-child(4) {
