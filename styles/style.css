@@ -106,9 +106,9 @@
   --space-b-xxl: 15rem;
 
   --master-layout: 
-    minmax(1rem, 1fr)
-    min(100% - 2rem, 800px)
-    minmax(1rem, 1fr);
+    minmax(1.5rem, 1fr)
+    min(100% - 3rem, 800px)
+    minmax(1.5rem, 1fr);
 }
 
 
@@ -145,7 +145,8 @@ input {
 }
 
 
-/* -------- Layout setup -------- */
+
+/* ========== LAYOUT SETUP ========== */
 
 body {
   background: var(--bg);
@@ -155,10 +156,10 @@ body {
   /* user-select: none; */
 }
 
-/* --------- MASTER LAYOUT SETUP ---------- */
+/* MASTER LAYOUT SETUP */
 section, header, footer {
   display: grid;
-  grid-template-columns: var(--master-layout)
+  grid-template-columns: var(--master-layout);
 }
 
 section > *, header > *, footer > * {
@@ -172,25 +173,20 @@ section > *, header > *, footer > * {
 
 
 
-/* ========== BASIC BODY STYLING ============ */
-
-/* -------- Scroll Styling -------- */
+/* ========== SCROLL STYLING ========== */
 
 ::-webkit-scrollbar {
-  /* --bg: var(--color-pri-L); */
   width: 10px;
   background: var(--color-pri-L);
 }
 
 ::-webkit-scrollbar-thumb {
-  /* --bg: var(--color-pri-D); */
   background: var(--color-pri-D);
 }
 
 html {
   scroll-behavior: smooth;
 }
-
 
 
 
@@ -207,7 +203,7 @@ img {
 /* -------- button styling -------- */
 
 .btn {
-  /* background: var(--color-black); */
+  background: var(--fg);
   color: var(--color-white);
   border-radius: 2rem;
   padding: var(--space-xs) var(--space-xl);
@@ -228,12 +224,12 @@ img {
 
 .btn.sec {
   background: transparent;
-  color: var(--color-pri);
-  border: 1px solid var(--color-pri);
+  color: var(--color-sec);
+  border: 1px solid var(--color-sec);
 }
 
 .btn.sec:hover {
-  background: var(--color-pri-L);
+  background: var(--color-accent);
 }
 
 .btn.ter {
@@ -272,21 +268,7 @@ h1 {
 
 
 
-
-/* ============ DEBUGGER ============ */
-* {
-  /* outline: 1px solid green;
-  background: hsla(80, 80%, 30%, 0.1); */
-}
-
-
-
-
-
-
 /* ========== NAVBAR ============ */
-
-
 
 nav {
   position: fixed;
@@ -384,12 +366,7 @@ nav ul li a:hover {
 }
 
 
-
-
-
 /* ======== HAMBURGER ========= */
-
-
 
 .hamburger {
   aspect-ratio: 1;
@@ -413,8 +390,6 @@ nav ul li a:hover {
   transition: var(--transition);
   background: var(--color-pri);
 }
-
-
 
 
 
@@ -451,12 +426,7 @@ nav ul li a:hover {
 
 
 
-
-
 /* ========== Blogs ============ */
-
-
-
 
 #blogs {
   background: var(--color-pri-L);
@@ -545,7 +515,7 @@ nav ul li a:hover {
 
 .blogs .tag {
   background: var(--color-pri-D);
-  opacity: .4;
+  /* opacity: 1; */
   padding: 0 8px;
   border-radius: 1rem;
 
@@ -576,14 +546,7 @@ nav ul li a:hover {
 }
 
 
-
-
-
-
-
-/* ========== FOOTER ============ */
-
-
+/* ========== FOOTER ========== */
 
 footer {
   background: var(--gray70);
@@ -730,7 +693,6 @@ footer .copyright {
     gap: var(--space-xl);
     padding: var(--space-m);
     background: var(--gray90);
-    /* justify-content: right; */
     align-items: start;
     box-shadow: var(--shadow);
   }
@@ -750,7 +712,6 @@ footer .copyright {
   }
 }
 
-
 .coming-soon {
   min-height: 86dvh;
   display: flex;
@@ -767,7 +728,6 @@ footer .copyright {
 
 /* =========== LIGHT/DARK/SYSTEM =========== */
 /* =============  MODE CONTROL ============= */
-
 
 
 /* Light mode default */
@@ -791,7 +751,7 @@ html.light-mode #blogs {
 html.light-mode .blogs .tag {
   background: var(--color-pri-D);
   color: var(--bg);
-  opacity: .4;
+  /* opacity: .4; */
 }
 
 html.light-mode footer {
